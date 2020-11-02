@@ -2,7 +2,7 @@ import 'package:Netflux/repository/movie_repository.dart';
 import 'package:flutter/material.dart';
 
 import '../models/movie.dart';
-import '../views/detail.dart';
+import '../views/movie_detail.dart';
 
 class MovieBuilder extends StatelessWidget {
   @override
@@ -28,7 +28,8 @@ class MovieBuilder extends StatelessWidget {
                       onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PageDetail()),
+                                settings: RouteSettings(arguments: movie),
+                                builder: (context) => MovieDetailPage()),
                           ),
                       child: Container(
                           width: 125.0,

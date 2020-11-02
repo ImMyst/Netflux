@@ -1,8 +1,8 @@
 import 'package:Netflux/repository/movie_repository.dart';
+import 'package:Netflux/views/serie_detail.dart';
 import 'package:flutter/material.dart';
 
 import '../models/serie.dart';
-import '../views/detail.dart';
 
 class SerieBuilder extends StatelessWidget {
   @override
@@ -28,7 +28,8 @@ class SerieBuilder extends StatelessWidget {
                       onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PageDetail()),
+                                settings: RouteSettings(arguments: serie),
+                                builder: (context) => SerieDetailPage()),
                           ),
                       child: Container(
                           width: 125.0,
